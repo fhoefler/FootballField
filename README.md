@@ -1,6 +1,6 @@
 Entity Klassen
 Teams
-Spieler
+Players
 Trainer
 Termine
 Platz
