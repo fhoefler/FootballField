@@ -3,10 +3,9 @@ package htl.steyr.model;
 import javax.persistence.*;
 import java.util.Set;
 
-
 @Entity
-@Table(name = "teams")
-public class Teams {
+@Table(name = "field")
+public class Field {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -15,10 +14,8 @@ public class Teams {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "teams", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "field", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private Set<Appiontment> appiontment;
-
-
 
     public long getId() {
         return id;
