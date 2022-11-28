@@ -15,6 +15,9 @@ public class Appiontment {
     @Column(name = "date", nullable = false)
     private Date date;
 
+    @Column(name = "reserviert", nullable = false)
+    private boolean reserved;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "teams_id")
     private Teams teams;
