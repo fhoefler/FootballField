@@ -5,13 +5,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr.timeentry.application.CategoryController">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr.application.TeamsController">
    <children>
       <Button layoutX="505.0" layoutY="293.0" mnemonicParsing="false" onAction="#saveClicked" text="Speichern" AnchorPane.bottomAnchor="81.66666666666669" AnchorPane.rightAnchor="26.33333333333337" />
       <Button layoutX="506.0" layoutY="360.0" mnemonicParsing="false" onAction="#closeClicked" text="Schließen" AnchorPane.bottomAnchor="14.666666666666686" AnchorPane.rightAnchor="27.33333333333337" />
-      <ListView fx:id="categoryListView" layoutX="14.0" layoutY="14.0" onMouseClicked="#categoryListViewClicked" prefHeight="373.0" prefWidth="316.0" AnchorPane.bottomAnchor="12.666666666666686" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <ListView fx:id="teamListView" layoutX="14.0" layoutY="14.0" onMouseClicked="#categoryListViewClicked" prefHeight="373.0" prefWidth="316.0" AnchorPane.bottomAnchor="12.666666666666686" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
       <TextField fx:id="nameTextField" layoutX="354.0" layoutY="14.0" prefHeight="25.0" prefWidth="224.0" promptText="Name" AnchorPane.leftAnchor="354.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="14.0" />
-      <TextField fx:id="descriptionTextField" layoutX="355.0" layoutY="55.0" prefHeight="25.0" prefWidth="224.0" promptText="Beschreibung" AnchorPane.leftAnchor="355.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="55.0" />
       <Button layoutX="364.0" layoutY="293.0" mnemonicParsing="false" onAction="#newClicked" text="Neu" AnchorPane.bottomAnchor="81.66666666666667" AnchorPane.rightAnchor="197.33333333333334" />
       <Button layoutX="426.0" layoutY="293.0" mnemonicParsing="false" onAction="#deleteClicked" text="Löschen" AnchorPane.bottomAnchor="81.66666666666667" AnchorPane.rightAnchor="114.66666666666666" />
    </children>
