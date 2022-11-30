@@ -21,7 +21,7 @@ public class Controller extends AbstractController{
                         mainPane.getScene().getWindow()
                 );
 
-        //controller.setObjects();
+        controller.setObjects();
     }
 
     public void manageFields(ActionEvent actionEvent) {
@@ -32,7 +32,7 @@ public class Controller extends AbstractController{
                         mainPane.getScene().getWindow()
                 );
 
-        //controller.setObjects();
+        controller.setObjects();
     }
 
     public void manageTeams(ActionEvent actionEvent) {
@@ -43,6 +43,6 @@ public class Controller extends AbstractController{
                         mainPane.getScene().getWindow()
                 );
 
-        //controller.setObjects();
+        controller.setObjects();
     }
 }

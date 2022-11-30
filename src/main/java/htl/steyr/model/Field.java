@@ -17,6 +17,13 @@ public class Field {
     @OneToMany(mappedBy = "field", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private Set<Appiontment> appiontment;
 
+    public Field() {
+    }
+
+    public Field(String name) {
+        this.name = name;
+    }
+
     public long getId() {
         return id;
     }

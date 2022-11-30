@@ -7,7 +7,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class AppointmentController {
+public class AppointmentController extends AbstractController{
     public AnchorPane mainPane;
     public ListView<Appiontment> appiontmentsListView;
     public DatePicker dateTextField;
