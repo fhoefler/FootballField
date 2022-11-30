@@ -18,7 +18,12 @@ public class Teams {
     @OneToMany(mappedBy = "teams", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private Set<Appiontment> appiontment;
 
+    public Teams() {
+    }
 
+    public Teams(String name) {
+        this.name = name;
+    }
 
     public long getId() {
         return id;
