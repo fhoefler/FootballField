@@ -1,4 +1,4 @@
-package htl.steyr.application;
+package htl.steyr.footballfield.application;
 
 import htl.steyr.FootballFieldApplication;
 import javafx.application.Application;
@@ -10,7 +10,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 public class JavaFxApplication extends Application {
-    private static final String APPLICATION_TITLE = "Manage time entries";
+    private static final String APPLICATION_TITLE = "Manage appiontments";
 
     private static ConfigurableApplicationContext springContext;
     private Parent root;

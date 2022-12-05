@@ -1,4 +1,4 @@
-package htl.steyr.application;
+package htl.steyr.footballfield.application;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

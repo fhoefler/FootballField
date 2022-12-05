@@ -5,21 +5,21 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr.application.Controller">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr.footballfield.application.Controller">
    <children>
       <MenuBar prefHeight="25.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Appointments">
+          <Menu mnemonicParsing="false" text="Termin">
             <items>
               <MenuItem mnemonicParsing="false" text="Manage" onAction="#manageAppointments"  />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Time Entries">
+          <Menu mnemonicParsing="false" text="Platz">
             <items>
               <MenuItem mnemonicParsing="false"  text="List" onAction="#manageFields" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Time Entries">
+            <Menu mnemonicParsing="false" text="Teams">
                 <items>
                     <MenuItem mnemonicParsing="false"  text="List" onAction="#manageTeams" />
                 </items>

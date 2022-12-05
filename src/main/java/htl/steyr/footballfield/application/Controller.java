@@ -1,4 +1,4 @@
-package htl.steyr.application;
+package htl.steyr.footballfield.application;
 
 import javafx.event.ActionEvent;
 import javafx.scene.layout.AnchorPane;
@@ -16,7 +16,7 @@ public class Controller extends AbstractController{
     public void manageAppointments(ActionEvent actionEvent) {
         AppointmentController controller =
                 (AppointmentController) openDialog(
-                        getClass().getResource("appointment.fxml"),
+                        getClass().getResource("appiontment.fxml"),
                         "Termin",
                         mainPane.getScene().getWindow()
                 );

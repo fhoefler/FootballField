@@ -1,8 +1,7 @@
-package htl.steyr.application;
+package htl.steyr.footballfield.application;
 
 import htl.steyr.model.Field;
 import htl.steyr.model.repository.FieldRepository;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.ListView;
@@ -11,7 +10,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FieldController extends AbstractController{
     public AnchorPane mainPane;
     public ListView<Field> fieldListView;

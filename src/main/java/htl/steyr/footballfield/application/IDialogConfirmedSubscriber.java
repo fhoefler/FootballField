@@ -1,4 +1,4 @@
-package htl.steyr.application;
+package htl.steyr.footballfield.application;
 
 public interface IDialogConfirmedSubscriber {
 

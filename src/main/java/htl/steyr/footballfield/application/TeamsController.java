@@ -1,8 +1,7 @@
-package htl.steyr.application;
+package htl.steyr.footballfield.application;
 
 import htl.steyr.model.Teams;
 import htl.steyr.model.repository.TeamsRepository;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.ListView;
@@ -11,7 +10,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+
+@Component
 public class TeamsController extends AbstractController {
     public AnchorPane mainPane;
     public ListView<Teams> teamListView;
@@ -22,9 +25,12 @@ public class TeamsController extends AbstractController {
 
     private Teams selectedTeams = null;
 
-
     public void initialize() {
-        teamListView.getItems().addAll(teamsRepository.findAll());
+
+        String.valueOf(teamListView.getItems().addAll(teamsRepository.findAll()));
+
+
+
     }
 
     public void saveClicked(ActionEvent actionEvent) {

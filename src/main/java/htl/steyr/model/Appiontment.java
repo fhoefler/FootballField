@@ -26,6 +26,16 @@ public class Appiontment {
     @JoinColumn(name = "field_id")
     private Field field;
 
+    public Appiontment() {
+    }
+
+    public Appiontment(Date date, boolean reserved, Teams teams, Field field) {
+        this.date = date;
+        this.reserved = reserved;
+        this.teams = teams;
+        this.field = field;
+    }
+
     public long getId() {
         return id;
     }
@@ -56,5 +66,13 @@ public class Appiontment {
 
     public void setField(Field field) {
         this.field = field;
+    }
+
+    public boolean isReserved() {
+        return reserved;
+    }
+
+    public void setReserved(boolean reserved) {
+        this.reserved = reserved;
     }
 }
