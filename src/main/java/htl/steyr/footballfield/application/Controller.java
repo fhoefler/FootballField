@@ -14,10 +14,10 @@ public class Controller extends AbstractController{
     }
 
     public void manageAppointments(ActionEvent actionEvent) {
-        AppointmentController controller =
-                (AppointmentController) openDialog(
+        AppiontmentController controller =
+                (AppiontmentController) openDialog(
                         getClass().getResource("appiontment.fxml"),
-                        "Termin",
+                        "Termin löschen",
                         mainPane.getScene().getWindow()
                 );
 
@@ -40,6 +40,28 @@ public class Controller extends AbstractController{
                 (TeamsController) openDialog(
                         getClass().getResource("teams.fxml"),
                         "Mannschaft",
+                        mainPane.getScene().getWindow()
+                );
+
+        controller.setObjects();
+    }
+
+    public void manageopenAppiontments(ActionEvent actionEvent) {
+        OpenAppiontmentController controller =
+                (OpenAppiontmentController) openDialog(
+                        getClass().getResource("openappiontment.fxml"),
+                        "Offene Termine",
+                        mainPane.getScene().getWindow()
+                );
+
+        controller.setObjects();
+    }
+
+    public void managenewAppiontments(ActionEvent actionEvent) {
+        NewAppiontmentController controller =
+                (NewAppiontmentController) openDialog(
+                        getClass().getResource("newappiontment.fxml"),
+                        "Neue Termine",
                         mainPane.getScene().getWindow()
                 );
 

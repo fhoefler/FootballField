@@ -24,6 +24,16 @@
                     <MenuItem mnemonicParsing="false"  text="List" onAction="#manageTeams" />
                 </items>
             </Menu>
+            <Menu mnemonicParsing="false" text="NewAppiontments">
+                <items>
+                    <MenuItem mnemonicParsing="false"  text="Manage" onAction="#managenewAppiontments" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="OpenAppiontments">
+                <items>
+                    <MenuItem mnemonicParsing="false"  text="Manage" onAction="#manageopenAppiontments" />
+                </items>
+            </Menu>
         </menus>
       </MenuBar>
    </children>

@@ -15,4 +15,11 @@ public interface AppointmentRepository extends JpaRepository<Appiontment, Long> 
 
     @Query("SELECT f From Field f where f.name = ?1")
     Field getFieldById(String name);
+
+
+    @Query("SELECT a From Appiontment a where a.reserved = true")
+    Appiontment[] getReservedAppiontments(String status);
+
+    @Query("SELECT a From Appiontment a where a.reserved = false")
+    Appiontment[] getOpenAppiontments(String status);
 }

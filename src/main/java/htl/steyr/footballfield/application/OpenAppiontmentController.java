@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 import java.sql.Date;
 
 @Component
-public class AppointmentController extends AbstractController{
+public class OpenAppiontmentController extends AbstractController{
     public AnchorPane mainPane;
     public ListView<Appiontment> appiontmentsListView;
 
@@ -25,9 +25,16 @@ public class AppointmentController extends AbstractController{
     public TextField dateTextField;
     public TextField chooseTeam;
     public TextField chooseField;
+    public TextField fieldTextFIeld;
+    public ListView openappiontementListVIew;
+    public Label appiontmentLabel;
+    public TextField teamTextField;
 
     @Autowired
     AppointmentRepository appointmentRepository;
+
+    @Autowired
+    AppointmentRepository openAppiontementRepository;
 
     private Appiontment selectedAppiontment;
 
@@ -36,7 +43,10 @@ public class AppointmentController extends AbstractController{
     private Field selectedField;
 
     public void initialize() {
-        appiontmentsListView.getItems().addAll(appointmentRepository.findAll());
+        Appiontment[] open = new Appiontment[0];
+        open = openAppiontementRepository.getOpenAppiontments("false");
+
+        appiontmentsListView.getItems().addAll(open);
 
     }
 
@@ -52,7 +62,7 @@ public class AppointmentController extends AbstractController{
 
         if (!date.equals("")) {
             if (selectedAppiontment == null) {
-                selectedAppiontment = new Appiontment(date, reserved, selectedTeam, selectedField);
+                //selectedAppiontment = new Appiontment(date, reserved, selectedTeam, selectedField);
             } else {
                 selectedAppiontment.setDate(date);
                 selectedAppiontment.setReserved(reserved);
@@ -85,30 +95,9 @@ public class AppointmentController extends AbstractController{
         }
     }
 
-    public void newClicked(ActionEvent actionEvent) {
-        clearSelection();
-    }
 
-    public void deleteClicked(ActionEvent actionEvent) {
-        if(selectedAppiontment != null) {
-            appointmentRepository.delete(selectedAppiontment);
 
-            appiontmentsListView.refresh();
-            clearSelection();
-        }
-    }
 
-    public void chooseReservedClicked(ActionEvent actionEvent) {
-        chooseReserved.setText("reserviert");
-        chooseReserved.setText("frei");
-    }
-
-    public void chooseTeamClicked(ActionEvent actionEvent) {
-
-    }
-
-    public void chosseFieldClicked(ActionEvent actionEvent) {
-    }
 
     public void clearSelection() {
         selectedAppiontment = null;
@@ -117,5 +106,12 @@ public class AppointmentController extends AbstractController{
         chooseTeam.setText("");
         chooseField.setText("");
         chooseReserved.setText("");
+    }
+
+
+    public void reserveAppiontmentClicked(ActionEvent actionEvent) {
+    }
+
+    public void openappiontsmentClicked(MouseEvent mouseEvent) {
     }
 }

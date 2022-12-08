@@ -29,10 +29,8 @@ public class Appiontment {
     public Appiontment() {
     }
 
-    public Appiontment(Date date, boolean reserved, Teams teams, Field field) {
+    public Appiontment(Date date, Field field) {
         this.date = date;
-        this.reserved = reserved;
-        this.teams = teams;
         this.field = field;
     }
 
