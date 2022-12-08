@@ -47,9 +47,9 @@ public class Controller extends AbstractController{
     }
 
     public void manageopenAppiontments(ActionEvent actionEvent) {
-        OpenAppiontmentController controller =
-                (OpenAppiontmentController) openDialog(
-                        getClass().getResource("openappiontment.fxml"),
+        FreeAppiontmentController controller =
+                (FreeAppiontmentController) openDialog(
+                        getClass().getResource("freeappiontment.fxml"),
                         "Offene Termine",
                         mainPane.getScene().getWindow()
                 );

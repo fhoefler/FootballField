@@ -24,6 +24,7 @@ public class FieldController extends AbstractController{
     private Field selectedField = null;
 
     public void initialize() {
+        selectedField = null;
         fieldListView.getItems().addAll(fieldRepository.findAll());
     }
 

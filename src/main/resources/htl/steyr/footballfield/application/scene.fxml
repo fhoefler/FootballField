@@ -9,7 +9,7 @@
    <children>
       <MenuBar prefHeight="25.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Termin">
+          <Menu mnemonicParsing="false" text="Reserervierte Termine">
             <items>
               <MenuItem mnemonicParsing="false" text="Manage" onAction="#manageAppointments"  />
             </items>
@@ -24,12 +24,12 @@
                     <MenuItem mnemonicParsing="false"  text="List" onAction="#manageTeams" />
                 </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="NewAppiontments">
+            <Menu mnemonicParsing="false" text="Neu Termine">
                 <items>
                     <MenuItem mnemonicParsing="false"  text="Manage" onAction="#managenewAppiontments" />
                 </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="OpenAppiontments">
+            <Menu mnemonicParsing="false" text="Offene Termine">
                 <items>
                     <MenuItem mnemonicParsing="false"  text="Manage" onAction="#manageopenAppiontments" />
                 </items>

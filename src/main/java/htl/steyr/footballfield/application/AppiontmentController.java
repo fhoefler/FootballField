@@ -30,6 +30,7 @@ public class AppiontmentController extends AbstractController{
 
 
     public void initialize() {
+        selectedAppiontment = null;
         Appiontment[] reserved = new Appiontment[0];
         reserved = reservedappiontmentRepository.getReservedAppiontments("true");
 

@@ -47,8 +47,6 @@ public class NewAppiontmentController extends AbstractController {
     }
 
 
-
-
     public void newappiontmentClicked(ActionEvent actionEvent) {
         Date date = Date.valueOf(dateTextField.getValue());
         String field = fieldTextFIeld.getText();
@@ -65,9 +63,6 @@ public class NewAppiontmentController extends AbstractController {
 
         }
 
-
-
     }
-
 
 }

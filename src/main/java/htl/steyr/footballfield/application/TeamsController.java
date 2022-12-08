@@ -26,7 +26,7 @@ public class TeamsController extends AbstractController {
     private Teams selectedTeams = null;
 
     public void initialize() {
-
+        selectedTeams = null;
         String.valueOf(teamListView.getItems().addAll(teamsRepository.findAll()));
 
 
