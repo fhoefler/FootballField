@@ -15,7 +15,7 @@ public interface TeamsRepository extends JpaRepository<Teams, Long> {
 
 
     @Query("SELECT t.name From Teams t")
-    String getNameof();
+    String[] getNameof();
 
 
     @Query("SELECT t From Teams t where t.name = ?1")

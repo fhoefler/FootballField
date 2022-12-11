@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/appiontment")
 public class TimeEntryRestController {
 
     @Autowired
@@ -27,17 +26,27 @@ public class TimeEntryRestController {
     @GetMapping("/appiontment/open")
     public Appiontment[] openappiontments()  {
 
+
         return appointmentRepository.getOpenAppiontments("false");
     }
 
-    @PostMapping("/create")
-    boolean createSchoolClass(@RequestParam(value = "name", required = false) String name) {
-
+    @GetMapping("/create")
+    boolean createSchoolClass(@RequestParam(value = "name") String name) {
+        if (name.isEmpty() || name.isBlank()) {
+            return false;
+        } else {
             Teams sc = new Teams();
             sc.setName(name);
             teamsRepository.save(sc);
             return true;
+        }
+    }
 
+    @GetMapping("/teams")
+    public String[] teams()  {
+        String[] teams = teamsRepository.getNameof();
+
+        return teams;
     }
 
 }
