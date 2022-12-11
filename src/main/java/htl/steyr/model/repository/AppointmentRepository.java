@@ -21,7 +21,7 @@ public interface AppointmentRepository extends JpaRepository<Appiontment, Long> 
     Appiontment[] getReservedAppiontments(String status);
 
     @Query("SELECT a From Appiontment a where a.reserved = false")
-    Appiontment[] getOpenAppiontments(String status);
+    Appiontment[] getFreeAppiontments(String status);
 
     @Query("SELECT a.date From Appiontment a where a.reserved = false")
     String getOpenAppiontmentsDate(String status);

@@ -9,4 +9,7 @@ public interface FieldRepository extends JpaRepository<Field, Long> {
 
     @Query("SELECT f From Field f where f.name = ?1")
     Field findFieldByName(String name);
+
+    @Query("SELECT f.name From Field f")
+    String[] getNameofFields();
 }

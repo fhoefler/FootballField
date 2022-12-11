@@ -23,11 +23,15 @@ public class TimeEntryRestController {
     @Autowired
     TeamsRepository teamsRepository;
 
-    @GetMapping("/appiontment/open")
-    public Appiontment[] openappiontments()  {
+    @GetMapping("/appiontment/free")
+    public String[] freeappiontments()  {
+        Appiontment[] appiontments = appointmentRepository.getFreeAppiontments("false");
+        String[] appiontment = new String[appiontments.length];
+        for(int i = 0; appiontments.length > i; ++i) {
+            appiontment[i] = appiontments[i].getField().getName() + "-" + appiontments[i].getDate();
+        }
 
-
-        return appointmentRepository.getOpenAppiontments("false");
+        return appiontment;
     }
 
     @GetMapping("/create")
@@ -47,6 +51,13 @@ public class TimeEntryRestController {
         String[] teams = teamsRepository.getNameof();
 
         return teams;
+    }
+
+    @GetMapping("/fields")
+    public String[] fiels()  {
+        String[] fields = fieldRepository.getNameofFields();
+
+        return fields;
     }
 
 }

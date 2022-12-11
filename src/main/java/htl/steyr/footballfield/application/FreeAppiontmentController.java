@@ -49,7 +49,7 @@ public class FreeAppiontmentController extends AbstractController{
         selectedAppiontment = null;
 
         Appiontment[] free = new Appiontment[0];
-        free = freeAppiontementRepository.getOpenAppiontments("false");
+        free = freeAppiontementRepository.getFreeAppiontments("false");
 
         freeappiontementListVIew.getItems().addAll(free);
 
