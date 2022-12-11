@@ -2,6 +2,8 @@ package htl.steyr.footballfield.application;
 
 import htl.steyr.model.Teams;
 import htl.steyr.model.repository.TeamsRepository;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.ListView;
@@ -11,6 +13,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -26,8 +30,7 @@ public class TeamsController extends AbstractController {
     private Teams selectedTeams = null;
 
     public void initialize() {
-        selectedTeams = null;
-        String.valueOf(teamListView.getItems().addAll(teamsRepository.findAll()));
+        teamListView.getItems().addAll(teamsRepository.findAll());
 
 
 
@@ -59,7 +62,7 @@ public class TeamsController extends AbstractController {
     }
 
     public void categoryListViewClicked(MouseEvent mouseEvent) {
-        selectedTeams = teamListView.getSelectionModel().getSelectedItem();
+        //selectedTeams = teamListView.getSelectionModel().getSelectedItem();
 
         if (selectedTeams != null) {
             nameTextField.setText(selectedTeams.getName());
@@ -85,5 +88,17 @@ public class TeamsController extends AbstractController {
         selectedTeams = null;
 
         nameTextField.setText("");
+    }
+
+    @PostMapping("/create")
+    boolean createSchoolClass(@RequestParam String className) {
+        if (className.isEmpty() || className.isBlank()) {
+            return false;
+        } else {
+            Teams sc = new Teams();
+            sc.setName(className);
+            teamsRepository.save(sc);
+            return true;
+        }
     }
 }
