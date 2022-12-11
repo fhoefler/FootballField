@@ -12,7 +12,7 @@ public class Teams {
     @Id
     private long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
 
     @OneToMany(mappedBy = "teams", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
