@@ -34,6 +34,32 @@ public class TimeEntryRestController {
         return appiontment;
     }
 
+    @GetMapping("/appiontment")
+    public String[] appiontments()  {
+        Appiontment[] appiontments = appointmentRepository.getAppiontments();
+        String[] appiontment = new String[appiontments.length];
+        for(int i = 0; appiontments.length > i; ++i) {
+            if(appiontments[i].isReserved()) {
+                appiontment[i] = appiontments[i].getField().getName() + "-" + appiontments[i].getDate() + " reserviert";
+            } else {
+                appiontment[i] = appiontments[i].getField().getName() + "-" + appiontments[i].getDate() + " nicht reserviert";
+            }
+        }
+
+        return appiontment;
+    }
+
+    @GetMapping("/appiontment/reserved")
+    public String[] reservedappiontments()  {
+        Appiontment[] appiontments = appointmentRepository.getReservedAppiontments("true");
+        String[] appiontment = new String[appiontments.length];
+        for(int i = 0; appiontments.length > i; ++i) {
+            appiontment[i] = appiontments[i].getField().getName() + "-" + appiontments[i].getDate();
+        }
+
+        return appiontment;
+    }
+
     @GetMapping("/create")
     boolean createSchoolClass(@RequestParam(value = "name") String name) {
         if (name.isEmpty() || name.isBlank()) {
