@@ -10,6 +10,8 @@ import htl.steyr.model.repository.TeamsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
+
 
 @RestController
 public class TimeEntryRestController {
@@ -24,10 +26,10 @@ public class TimeEntryRestController {
     TeamsRepository teamsRepository;
 
     @GetMapping("/appiontment/free")
-    public String[] freeappiontments()  {
+    public String[] freeappiontments() {
         Appiontment[] appiontments = appointmentRepository.getFreeAppiontments("false");
         String[] appiontment = new String[appiontments.length];
-        for(int i = 0; appiontments.length > i; ++i) {
+        for (int i = 0; appiontments.length > i; ++i) {
             appiontment[i] = appiontments[i].getField().getName() + "-" + appiontments[i].getDate();
         }
 
@@ -35,11 +37,11 @@ public class TimeEntryRestController {
     }
 
     @GetMapping("/appiontment")
-    public String[] appiontments()  {
+    public String[] appiontments() {
         Appiontment[] appiontments = appointmentRepository.getAppiontments();
         String[] appiontment = new String[appiontments.length];
-        for(int i = 0; appiontments.length > i; ++i) {
-            if(appiontments[i].isReserved()) {
+        for (int i = 0; appiontments.length > i; ++i) {
+            if (appiontments[i].isReserved()) {
                 appiontment[i] = appiontments[i].getField().getName() + "-" + appiontments[i].getDate() + " reserviert";
             } else {
                 appiontment[i] = appiontments[i].getField().getName() + "-" + appiontments[i].getDate() + " nicht reserviert";
@@ -50,42 +52,68 @@ public class TimeEntryRestController {
     }
 
     @GetMapping("/appiontment/reserved")
-    public String[] reservedappiontments()  {
+    public String[] reservedappiontments() {
         Appiontment[] appiontments = appointmentRepository.getReservedAppiontments("true");
         String[] appiontment = new String[appiontments.length];
-        for(int i = 0; appiontments.length > i; ++i) {
+        for (int i = 0; appiontments.length > i; ++i) {
             appiontment[i] = appiontments[i].getField().getName() + "-" + appiontments[i].getDate();
         }
 
         return appiontment;
     }
 
-    @GetMapping("/create")
-    boolean createSchoolClass(@RequestParam(value = "name") String name) {
+    @PostMapping("/createTeam")
+    boolean createTeam(@RequestParam String name) {
         if (name.isEmpty() || name.isBlank()) {
             return false;
         } else {
-            Teams sc = new Teams();
-            sc.setName(name);
-            teamsRepository.save(sc);
+            Teams teams = new Teams();
+            teams.setName(name);
+            teamsRepository.save(teams);
             return true;
         }
     }
 
     @GetMapping("/teams")
-    public String[] teams()  {
+    public String[] teams() {
         String[] teams = teamsRepository.getNameof();
 
         return teams;
     }
 
     @GetMapping("/fields")
-    public String[] fiels()  {
+    public String[] fiels() {
         String[] fields = fieldRepository.getNameofFields();
 
         return fields;
     }
 
+    @PostMapping("/createField")
+    boolean createField(@RequestParam String name) {
+        if (name.isEmpty() || name.isBlank()) {
+            return false;
+        } else {
+            Field field = new Field();
+            field.setName(name);
+            fieldRepository.save(field);
+            return true;
+        }
+    }
+
+    @PostMapping("/createAppiontment")
+    boolean createField(@RequestParam String fieldname, @RequestParam String date) {
+        if (fieldname.isEmpty() || fieldname.isBlank()) {
+            return false;
+        } else {
+            Appiontment appiontment = new Appiontment();
+            Field field = new Field();
+            field = appointmentRepository.getFieldByName(fieldname);
+            appiontment.setField(field);
+            appiontment.setDate(Date.valueOf(date));
+            appointmentRepository.save(appiontment);
+            return true;
+        }
+    }
 }
 
 
