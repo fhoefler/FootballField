@@ -35,7 +35,4 @@ jobs:
           path: target/surefire-reports/*.xml
           reporter: java-junit
           
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Package
-          path: staging
+
