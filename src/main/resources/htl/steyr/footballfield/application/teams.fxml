@@ -9,7 +9,7 @@
    <children>
       <Button layoutX="505.0" layoutY="293.0" mnemonicParsing="false" onAction="#saveClicked" text="Speichern" AnchorPane.bottomAnchor="81.66666666666669" AnchorPane.rightAnchor="26.33333333333337" />
       <Button layoutX="506.0" layoutY="360.0" mnemonicParsing="false" onAction="#closeClicked" text="Schließen" AnchorPane.bottomAnchor="14.666666666666686" AnchorPane.rightAnchor="27.33333333333337" />
-      <ListView fx:id="teamListView" layoutX="14.0" layoutY="14.0" onMouseClicked="#categoryListViewClicked" prefHeight="373.0" prefWidth="316.0" AnchorPane.bottomAnchor="12.666666666666686" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <ListView fx:id="teamListView" layoutX="14.0" layoutY="14.0" onMouseClicked="#teamsListViewClicked" prefHeight="373.0" prefWidth="316.0" AnchorPane.bottomAnchor="12.666666666666686" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
       <TextField fx:id="nameTextField" layoutX="354.0" layoutY="14.0" prefHeight="25.0" prefWidth="224.0" promptText="Name" AnchorPane.leftAnchor="354.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="14.0" />
       <Button layoutX="364.0" layoutY="293.0" mnemonicParsing="false" onAction="#newClicked" text="Neu" AnchorPane.bottomAnchor="81.66666666666667" AnchorPane.rightAnchor="197.33333333333334" />
       <Button layoutX="426.0" layoutY="293.0" mnemonicParsing="false" onAction="#deleteClicked" text="Löschen" AnchorPane.bottomAnchor="81.66666666666667" AnchorPane.rightAnchor="114.66666666666666" />

@@ -58,8 +58,8 @@ public class TeamsController extends AbstractController {
         s.close();
     }
 
-    public void categoryListViewClicked(MouseEvent mouseEvent) {
-        //selectedTeams = teamListView.getSelectionModel().getSelectedItem();
+    public void teamsListViewClicked(MouseEvent mouseEvent) {
+        selectedTeams = teamListView.getSelectionModel().getSelectedItem();
 
         if (selectedTeams != null) {
             nameTextField.setText(selectedTeams.getName());
@@ -87,15 +87,4 @@ public class TeamsController extends AbstractController {
         nameTextField.setText("");
     }
 
-    @PostMapping("/create")
-    boolean createSchoolClass(@RequestParam String className) {
-        if (className.isEmpty() || className.isBlank()) {
-            return false;
-        } else {
-            Teams sc = new Teams();
-            sc.setName(className);
-            teamsRepository.save(sc);
-            return true;
-        }
-    }
 }
