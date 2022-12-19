@@ -101,18 +101,16 @@ public class TimeEntryRestController {
     }
 
     @PostMapping("/createAppiontment")
-    boolean createField(@RequestParam String fieldname, @RequestParam String date) {
-        if (fieldname.isEmpty() || fieldname.isBlank()) {
-            return false;
-        } else {
-            Appiontment appiontment = new Appiontment();
-            Field field = new Field();
-            field = appointmentRepository.getFieldByName(fieldname);
-            appiontment.setField(field);
-            appiontment.setDate(Date.valueOf(date));
-            appointmentRepository.save(appiontment);
-            return true;
-        }
+    boolean createAppiontment(@RequestParam String fieldname, @RequestParam String date) {
+
+        Appiontment appiontment = new Appiontment();
+        Field field;
+        field = appointmentRepository.getFieldByName(fieldname);
+        appiontment.setField(field);
+        appiontment.setDate(Date.valueOf(date));
+        appointmentRepository.save(appiontment);
+        return true;
+
     }
 }
 

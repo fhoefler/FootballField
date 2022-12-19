@@ -31,9 +31,6 @@ public class TeamsController extends AbstractController {
 
     public void initialize() {
         teamListView.getItems().addAll(teamsRepository.findAll());
-
-
-
     }
 
     public void saveClicked(ActionEvent actionEvent) {
